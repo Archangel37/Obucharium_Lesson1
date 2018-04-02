@@ -1,0 +1,20 @@
+D:\Паша\___!!!! курсы C#\Lesson1\Lesson1\bin\Debug\Lesson1.exe.config
+D:\Паша\___!!!! курсы C#\Lesson1\Lesson1\bin\Debug\Lesson1.exe
+D:\Паша\___!!!! курсы C#\Lesson1\Lesson1\bin\Debug\Lesson1.pdb
+D:\Паша\___!!!! курсы C#\Lesson1\Lesson1\obj\Debug\Lesson1.csprojResolveAssemblyReference.cache
+D:\Паша\___!!!! курсы C#\Lesson1\Lesson1\obj\Debug\Lesson1.Form1.resources
+D:\Паша\___!!!! курсы C#\Lesson1\Lesson1\obj\Debug\Lesson1.Properties.Resources.resources
+D:\Паша\___!!!! курсы C#\Lesson1\Lesson1\obj\Debug\Lesson1.csproj.GenerateResource.Cache
+D:\Паша\___!!!! курсы C#\Lesson1\Lesson1\obj\Debug\Lesson1.csproj.CoreCompileInputs.cache
+D:\Паша\___!!!! курсы C#\Lesson1\Lesson1\obj\Debug\Lesson1.exe
+D:\Паша\___!!!! курсы C#\Lesson1\Lesson1\obj\Debug\Lesson1.pdb
+C:\RepositoryCSharp\CoursesCSharp\Lesson1\Lesson1\bin\Debug\Lesson1.exe.config
+C:\RepositoryCSharp\CoursesCSharp\Lesson1\Lesson1\bin\Debug\Lesson1.exe
+C:\RepositoryCSharp\CoursesCSharp\Lesson1\Lesson1\bin\Debug\Lesson1.pdb
+C:\RepositoryCSharp\CoursesCSharp\Lesson1\Lesson1\obj\Debug\Lesson1.csprojResolveAssemblyReference.cache
+C:\RepositoryCSharp\CoursesCSharp\Lesson1\Lesson1\obj\Debug\Lesson1.Form1.resources
+C:\RepositoryCSharp\CoursesCSharp\Lesson1\Lesson1\obj\Debug\Lesson1.Properties.Resources.resources
+C:\RepositoryCSharp\CoursesCSharp\Lesson1\Lesson1\obj\Debug\Lesson1.csproj.GenerateResource.cache
+C:\RepositoryCSharp\CoursesCSharp\Lesson1\Lesson1\obj\Debug\Lesson1.csproj.CoreCompileInputs.cache
+C:\RepositoryCSharp\CoursesCSharp\Lesson1\Lesson1\obj\Debug\Lesson1.exe
+C:\RepositoryCSharp\CoursesCSharp\Lesson1\Lesson1\obj\Debug\Lesson1.pdb
