@@ -13,14 +13,19 @@ namespace Lesson1
             InitializeComponent();
         }
 
-        //Без обид, всех из ВК-группы, лист для перемешивания
+        /// <summary>
+        /// Обычный list с именами всех из ВК-группы, лист для перемешивания
+        /// </summary>
         private List<string> ourNames = new List<string> { "Алла Крупнова", "Илья Полищук", "Евгений Герасименко",
                 "Николай Чуриков", "Mr Vakhid", "Антон Сермус", "Ramazan Isaev", "Антон Иванов", "Павел Решетников" };
 
         /// <summary>
-        /// Константный перечислитель имён, порядок которого мы не меняем
+        /// Константный перечислитель имён, порядок которого мы не меняем (readonly)
         /// </summary>
-        enum ConstNames { Alla, Ilya, Eugeny, Nikolay, Vakhid, AntonS, Ramazan, AntonI, Paul };
+        private readonly List<string> constNames = new List<string> { "Алла Крупнова", "Илья Полищук", "Евгений Герасименко",
+                "Николай Чуриков", "Mr Vakhid", "Антон Сермус", "Ramazan Isaev", "Антон Иванов", "Павел Решетников" };
+
+
         private static Random rnd = new Random();
 
         /// <summary>
@@ -60,15 +65,14 @@ namespace Lesson1
         /// <param name="e"></param>
         private void button2_Click(object sender, EventArgs e)
         {
-            var indexes = Enumerable.Range(0, Enum.GetNames(typeof(ConstNames)).Length).ToList();
+            var indexes = Enumerable.Range(0, constNames.Count).ToList();
             Shuffle(indexes);
             //закинем все индексаторы в IEnumerable<string>, Select вместо foreach (под капотом одно и то же вроде)
-            var ResultNames = indexes.Select(index => Enum.GetValues(typeof(ConstNames)).GetValue(index).ToString());
+            var resultNames = indexes.Select(index => constNames[index]);
 
-            if (MessageBox.Show(String.Join(",\n", ResultNames), "info", MessageBoxButtons.OKCancel, MessageBoxIcon.Information)
+            if (MessageBox.Show(String.Join(",\n", resultNames), "info", MessageBoxButtons.OKCancel, MessageBoxIcon.Information)
                 == DialogResult.OK)
-                MessageBox.Show(string.Join(", ", Enumerable.Range(0, Enum.GetNames(typeof(ConstNames)).Length)
-                    .Select(name=>(ConstNames)name)), "names", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show(string.Join(", ", constNames), "names", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 }
