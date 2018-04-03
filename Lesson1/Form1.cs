@@ -17,9 +17,9 @@ namespace Lesson1
         private List<string> ourNames = new List<string> { "Алла Крупнова", "Илья Полищук", "Евгений Герасименко",
                 "Николай Чуриков", "Mr Vakhid", "Антон Сермус", "Ramazan Isaev", "Антон Иванов", "Павел Решетников" };
 
-        //если нам не надо изначальный порядок менять - можем воспользоваться, к примеру enum'ом
-        //можно через словарь, можно через любые другие сущности
-        //enum просто чтоб показать, что мы не меняем изначальные данные
+        /// <summary>
+        /// Константный перечислитель имён, порядок которого мы не меняем
+        /// </summary>
         enum ConstNames { Alla, Ilya, Eugeny, Nikolay, Vakhid, AntonS, Ramazan, AntonI, Paul };
         private static Random rnd = new Random();
 
@@ -76,12 +76,12 @@ namespace Lesson1
             var indexes = Enumerable.Range(0, Enum.GetNames(typeof(ConstNames)).Length).ToList();
             AddonRandomizer(indexes);
             //закинем все индексаторы в IEnumerable<string>, Select вместо foreach (под капотом одно и то же вроде)
-            var ResultNames = indexes.Select(x => Enum.GetValues(typeof(ConstNames)).GetValue(x).ToString());
+            var ResultNames = indexes.Select(index => Enum.GetValues(typeof(ConstNames)).GetValue(index).ToString());
 
             if (MessageBox.Show(String.Join(",\n", ResultNames), "info", MessageBoxButtons.OKCancel, MessageBoxIcon.Information)
                 == DialogResult.OK)
                 MessageBox.Show(string.Join(", ", Enumerable.Range(0, Enum.GetNames(typeof(ConstNames)).Length)
-                    .Select(x=>(ConstNames)x)), "names", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    .Select(name=>(ConstNames)name)), "names", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 }
