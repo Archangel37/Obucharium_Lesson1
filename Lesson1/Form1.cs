@@ -40,41 +40,28 @@ namespace Lesson1
                 list[n] = value;
             }
         }
-
+        
         /// <summary>
-        /// Дополнительная рандомизация - количество перемешиваний листа - рандом от 1 до 12 включительно
+        /// Кнопка для исполнения "обычного" перетасовывания исходного листа имён - с изменением исходного листа
         /// </summary>
-        /// <typeparam name="T"></typeparam>
-        /// <param name="list"></param>
-        private static void AddonRandomizer<T>(IList<T> list)
-        {
-            //если хотим "порандомнее" - навесим количество перемешиваний тоже на рандом, НО как минимум одно перемешивание должно случиться
-            //поэтому воспользуемся <do - while>
-            //рандом на всякий - другой переменной, не знаю зачем, но - "паучье чутьё" =) 
-            Random rnd2 = new Random();
-
-            //хорошее число, 13.. (1 - включённый, 13 - исключённый верхний предел т.е. числа 1..12, хотя 1 не обязательно(можно и 0) 
-            //- do-while всё равно 1 раз выполнится)
-            int iterations = rnd2.Next(1, 13);
-            do
-            {
-                Shuffle(list);
-                iterations--;
-            } while (iterations > 0);
-        }
-
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button1_Click(object sender, EventArgs e)
         {
-            //можно сделать не void AddonRandomizer, а возвращать листом
-            //тогда вообще всё в одну строчку можно написать в этой кнопке
-            AddonRandomizer(ourNames);
+            Shuffle(ourNames);
             MessageBox.Show(String.Join(",\n", ourNames), "info", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
+        /// <summary>
+        /// Кнопка для перетасовки листа чисел-индексов от 0 до кол-ва элементов, взятия значений 
+        /// из неменяемого списка по индексу, список при этом не меняется
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button2_Click(object sender, EventArgs e)
         {
             var indexes = Enumerable.Range(0, Enum.GetNames(typeof(ConstNames)).Length).ToList();
-            AddonRandomizer(indexes);
+            Shuffle(indexes);
             //закинем все индексаторы в IEnumerable<string>, Select вместо foreach (под капотом одно и то же вроде)
             var ResultNames = indexes.Select(index => Enum.GetValues(typeof(ConstNames)).GetValue(index).ToString());
 
